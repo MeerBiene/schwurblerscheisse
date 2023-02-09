@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/afa.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antifa e.V.</title>
+    <style>
+      /* Export to style.css later */
+      .container {
+        margin: 20px auto;
+        max-width: 640px;
+      }
+      .img-container {
+        max-width: 510px;
+      }
+      #preview {
+        width: 32vw;
+      }
+
+      .button-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+      }
+
+      .done {
+        background-color: green;
+        justify-self: flex-end;
+        justify-content: flex-end;
+      }
+
+      .hidden {
+        display: none;
+      }
+      .final {
+        width: 80px;
+      }
+      .filter-selection {
+        overflow: scroll;
+        display: flex;
+        float: left;
+        height: 13vh;
+      }
+
+      img {
+        max-width: 100%;
+      }
+      .sidebar {
+        margin: 20px auto;
+        width: 250px;
+        margin-right: 19rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0;
+        text-align: left;
+        border: 1px solid red;
+        float: right;
+      }
+      .sidebarcontents {
+        padding: 5px 0px 5px 0px;
+        margin-left: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Antifa e.V.</h1>
+      <h3 id="ansage">Bild auswählen</h3>
+      <div class="sidebar">
+        <div class="sidebarcontents">
+          <h2>FAQ</h2>
+          <p>Some Information about us</p>
+        </div>
+      </div>
+      <div>
+        <div class="img-container"></div>
+        <div class="button container">
+          <div class="button-wrap">
+            <input id="upload" type="file" accept="image/*" />
+          </div>
+          <div id="toolbar" class="hidden">
+            <div class="button-wrap">
+              <button id="rotate-left">
+                <img class="icons" src="/rotate-left.svg" />
+              </button>
+              <button id="rotate-right">
+                <img class="icons" src="/rotate-right.svg" />
+              </button>
+              <button id="done" class="done">Fertig</button>
+              <button id="reset" class="done">Reset</button>
+            </div>
+          </div>
+          <div class="final"></div>
+        </div>
+        <div class="filter-selection">
+          <div class="items"></div>
+        </div>
+        <div class="button-wrap">
+          <button id="download" class="hidden">
+            <img class="icons" src="/download.svg" />
+            Speichern
+          </button>
+          <button id="reset2" class="done hidden">Reset</button>
+        </div>
+      </div>
+    </div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
