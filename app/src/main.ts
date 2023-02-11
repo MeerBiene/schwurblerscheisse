@@ -9,7 +9,11 @@ let IMG_PREVIEW_EL;
 let IMG_CONTAINER_EL = document.querySelector(".img-container");
 let ALREADY_DOWNSCALED = false;
 let DOWNLOAD_EL;
+// prod on github
 let BASE_URL = "/schwurblerscheisse/";
+// let BASE_URL = "";
+console.log(window.location.pathname);
+
 // document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 //   <div>
 //     <a href="https://vitejs.dev" target="_blank">
