@@ -9,6 +9,7 @@ let IMG_PREVIEW_EL;
 let IMG_CONTAINER_EL = document.querySelector(".img-container");
 let ALREADY_DOWNSCALED = false;
 let DOWNLOAD_EL;
+let BASE_URL = "/schwurblerscheisse/";
 // document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 //   <div>
 //     <a href="https://vitejs.dev" target="_blank">
@@ -90,17 +91,15 @@ function done() {
   const filterContainer = document.querySelector(".filter-selection");
 
   let filters = [
-    "/filter_1.png",
-    "/filter_1.png",
-    "/filter_1.png",
-    "/filter_1.png",
-    "/filter_1.png",
-    "/filter_1.png",
-    "/filter_1.png",
-    "/filter_1.png",
-    "/filter_2.png",
-    "/filter_3.png",
-    "/filter_4.png",
+    `${BASE_URL}filter_1.png`,
+    `${BASE_URL}filter_1.png`,
+    `${BASE_URL}filter_1.png`,
+    `${BASE_URL}filter_1.png`,
+    `${BASE_URL}filter_1.png`,
+    `${BASE_URL}filter_1.png`,
+    `${BASE_URL}filter_2.png`,
+    `${BASE_URL}filter_3.png`,
+    `${BASE_URL}filter_4.png`,
   ];
 
   for (let i = 0; i < filters.length; i++) {
