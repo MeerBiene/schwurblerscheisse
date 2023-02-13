@@ -10,7 +10,7 @@ let IMG_CONTAINER_EL = document.querySelector(".img-container");
 let ALREADY_DOWNSCALED = false;
 let DOWNLOAD_EL;
 // prod on github
-let BASE_URL = "/schwurblerscheisse/";
+let BASE_URL = "/";
 // let BASE_URL = "";
 console.log(window.location.pathname);
 
@@ -95,22 +95,29 @@ function done() {
   const filterContainer = document.querySelector(".filter-selection");
 
   let filters = [
-    `${BASE_URL}filter_1.png`,
-    `${BASE_URL}filter_1.png`,
-    `${BASE_URL}filter_1.png`,
-    `${BASE_URL}filter_1.png`,
-    `${BASE_URL}filter_1.png`,
-    `${BASE_URL}filter_1.png`,
-    `${BASE_URL}filter_2.png`,
-    `${BASE_URL}filter_3.png`,
-    `${BASE_URL}filter_4.png`,
+    `${BASE_URL}filter_1_queer_split.png`,
+    `${BASE_URL}filter_1_hard_split.png`,
+    `${BASE_URL}filter_1_smooth_split.png`,
+    `${BASE_URL}filter_2_queer_split.png`,
+    `${BASE_URL}filter_2_hard_split.png`,
+    `${BASE_URL}filter_2_smooth_split.png`,
+    `${BASE_URL}filter_3_hard_split.png`,
+    `${BASE_URL}filter_3_smooth_split.png`,
+    `${BASE_URL}filter_3_queer_split.png`,
+    `${BASE_URL}filter_4_hard_split.png`,
+    `${BASE_URL}filter_4_smooth_split.png`,
+    `${BASE_URL}filter_4_queer_split.png`,
+    // `${BASE_URL}filter_1.png`,
+    // `${BASE_URL}filter_2.png`,
+    // `${BASE_URL}filter_3.png`,
+    // `${BASE_URL}filter_4.png`,
   ];
 
   for (let i = 0; i < filters.length; i++) {
     let img = new Image();
+    img.className = "item";
     img.src = filters[i];
     img.id = filters[i];
-    img.class = "item";
     filterContainer?.appendChild(img);
   }
   document.getElementById("ansage").innerHTML = "Filter auswählen";
@@ -129,6 +136,10 @@ async function applyFilter(e) {
   let download = document.getElementById("download");
   download.classList.remove("hidden");
   document.getElementById("reset2").classList.remove("hidden");
+  document.getElementById("ansage").innerHTML = `Bild speichern.`;
+  document.getElementById(
+    "ansage_klein"
+  ).innerHTML = `Am Handy einfach lange auf das Bild tippen und "in Galerie speichern" auswählen`;
 
   let a = document.createElement("a");
   a.href = prom;

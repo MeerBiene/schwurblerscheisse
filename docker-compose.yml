@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  ava:
+    image: pierrezemb/gostatic
+    ports:
+    - "8091:8043"
+    volumes:
+    - "./app/dist/:/srv/http"
+#     networks:
+#     - web
+# networks:
+#   web:
+#     external: true
